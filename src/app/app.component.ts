@@ -1,29 +1,27 @@
+import {AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
 import {COURSES} from '../db-data';
-import { Component, Input } from '@angular/core';
-import { Course } from './model/course';
+import {Course} from './model/course';
+import {CourseCardComponent} from './course-card/course-card.component';
+import {HighlightedDirective} from './directives/highlighted.directive';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-courses = COURSES;
 
-title = COURSES[1].description;
+  courses = COURSES;
 
-price = 9.99564654;
-
-rate = 0.67;
-
-course = COURSES[1];
-
-startDate = new Date(2000, 0, 1);
-
-  onCourseSelected(course:Course) {
-
-    console.log("App component - click event bubbled....", course);
+  constructor() {
 
   }
+
+  ngOnInit() {
+  }
+
+
+
 }
